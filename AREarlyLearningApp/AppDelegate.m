@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "Product_Export_Establishment.h"
+#import "In_kind_volunteers.h"
 @interface AppDelegate ()
 
 @end
@@ -15,11 +16,214 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
     // Override point for customization after application launch.
+    NSUserDefaults *prfes=[NSUserDefaults standardUserDefaults];
+    [prfes setObject:@"1234" forKey:@"PassCode"];
+    [prfes synchronize];
+    NSURL *txtPath = [[NSBundle mainBundle] URLForResource:@"AREarlyLearning" withExtension:@"txt"];
+    NSString*stringPath = [txtPath absoluteString];
+    NSData *dataApp=[NSData dataWithContentsOfURL:[NSURL URLWithString:stringPath]];
+   NSDictionary *dicValueDataApp = [NSJSONSerialization JSONObjectWithData:dataApp options:kNilOptions error:nil];
+    NSURL *txtPathDonor=[[NSBundle mainBundle]URLForResource:@"ProductDescription" withExtension:@"txt"];
+    NSString *StrPathDOn=[txtPathDonor absoluteString];
+    NSData *dataDonor=[NSData dataWithContentsOfURL:[NSURL URLWithString:StrPathDOn]];
+    NSDictionary *dictValueDon=[NSJSONSerialization JSONObjectWithData:dataDonor options:kNilOptions error:nil];
+    
+    int i=1;
+    for (NSDictionary *dictCurrent in [[dictValueDon objectForKey:@"Records"] objectForKey:@"Record"])
+    {
+        NSManagedObjectContext *ObjContext=[self managedObjectContext];
+        In_kind_volunteers *UserInfo=[NSEntityDescription
+                                                insertNewObjectForEntityForName:@"In_kind_volunteers"
+                                                inManagedObjectContext:ObjContext];
+        UserInfo.userId=[[dictCurrent objectForKey:@"Row"] objectForKey:@"-A"];
+        UserInfo.fname=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-B"];
+        UserInfo.lname=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-C"];
+        UserInfo.cellNum=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-E"];
+        UserInfo.date=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-F"];
+        UserInfo.street=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-G"];
+        UserInfo.state=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-I"];
+        UserInfo.cntry=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-J"];
+        UserInfo.pin=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-K"];
+        UserInfo.street2=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-L"];
+        
+        
+    }
+    
+    for (NSDictionary *dictCurrent in [[dicValueDataApp objectForKey:@"Records"] objectForKey:@"Record"])
+    {
+        NSManagedObjectContext *ObjContext=[self managedObjectContext];
+       Product_Export_Establishment *UserInfo=[NSEntityDescription
+                        insertNewObjectForEntityForName:@"Product_Export_Establishment"
+                        inManagedObjectContext:ObjContext];
+        UserInfo.productClass=[[dictCurrent objectForKey:@"Row"] objectForKey:@"-A"];
+        UserInfo.productCategory=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-B"];
+        UserInfo.productSubcategory=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-C"];
+        UserInfo.productName=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-D"];
+        UserInfo.productDescription=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-E"];
+        UserInfo.price=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-F"];
+        UserInfo.cost=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-G"];
+        UserInfo.tax=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-H"];
+        UserInfo.sku=[[dictCurrent objectForKey:@"Row"]objectForKey:@"-J"];
+        
+    }
     return YES;
 }
+-(NSArray *)SearchDonors:(NSString*)StrField
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"In_kind_volunteers" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    NSPredicate * idPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"productDescription = '%@'",StrField]];
+    [request setPredicate:idPredicate];
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+    
+    return nil;
+}
 
+-(NSArray *)getDonors
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"In_kind_volunteers" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    //NSPredicate * idPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"productDescription = '%@'",StrProdescp]];
+    //[request setPredicate:idPredicate];
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+    
+    
+    
+    return nil;
+}
+
+-(NSArray *)getProdPirce:(NSString *)StrProdescp
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Product_Export_Establishment" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    NSPredicate * idPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"productDescription = '%@'",StrProdescp]];
+    [request setPredicate:idPredicate];
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+
+    return nil;
+}
+
+-(NSArray *)GetProdDescp:(NSString *)StrSubDescp
+{
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Product_Export_Establishment" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    NSPredicate * idPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"productName = '%@'",StrSubDescp]];
+    [request setPredicate:idPredicate];
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+
+
+    return nil;
+}
+
+
+-(NSArray *)getSubCatItem:(NSString *)StrSUbItem
+{  NSManagedObjectContext *context = [self managedObjectContext];
+
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Product_Export_Establishment" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    NSPredicate * idPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"productSubcategory = '%@'",StrSUbItem]];
+    [request setPredicate:idPredicate];
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+    
+    return nil;
+}
+
+-(NSArray*)getDataItemFrom:(NSString*)strItem
+{  NSManagedObjectContext *context = [self managedObjectContext];
+    
+    
+    NSEntityDescription *entityDesc = [NSEntityDescription entityForName:@"Product_Export_Establishment" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    NSPredicate * idPredicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"productCategory = '%@'",strItem]];
+    [request setPredicate:idPredicate];
+    
+    NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+    return nil;
+
+}
+-(NSArray*)getDataCategory
+{
+    NSManagedObjectContext *context=[self managedObjectContext];
+    NSEntityDescription *enetitYDesc=[NSEntityDescription entityForName:@"Product_Export_Establishment" inManagedObjectContext:context];
+    NSFetchRequest *request=[[NSFetchRequest alloc]init];
+    [request setEntity:enetitYDesc];
+    [request setReturnsObjectsAsFaults:NO];
+    
+   NSError *error = nil;
+    NSArray *objects = [context executeFetchRequest:request error:&error];
+    if ([objects count]>0) {
+        return objects;
+        
+    }
+    return nil;
+}
+
+
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+      return  UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+}
+-(BOOL)shouldAutorotate
+{
+    return NO;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -92,8 +296,6 @@
     
     return _persistentStoreCoordinator;
 }
-
-
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)
     if (_managedObjectContext != nil) {

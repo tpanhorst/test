@@ -1,0 +1,312 @@
+{
+  "Records": {
+    "Record": [
+    {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Automobile (Miles)",
+          "-C": "Automobile (Miles)",
+          "-D": "Automobile (Miles)",
+          "-E": "Donated Miles on Personal Vehicle in Lieu of Reimbursement",
+          "-F": "0.5",
+          "-G": "0",
+          "-J": "100000000001"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Materials",
+          "-C": "Supplies",
+          "-D": "Classroom Supplies",
+          "-E": "Donated Classroom Supplies",
+          "-G": "0",
+          "-J": "100000000011"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Monetary",
+          "-C": "Cash/Check",
+          "-D": "Donation of Currency",
+          "-E": "Donation of US Currency via Cash or Check",
+          "-G": "0",
+          "-J": "100000000021"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Space",
+          "-C": "Use of Facility",
+          "-D": "Donate Use of Facility for Meeting",
+          "-E": "Donation of Use of Facility for Meeting in Lieu of Rental Fees",
+          "-G": "0",
+          "-J": "100000000031"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Home School Connections",
+          "-D": "Home Task 1",
+          "-E": "Home activity supporting the childís Head Start experience, that was articulated by the teacher, and supports the curriculum used by the program.",
+          "-F": "9.81",
+          "-G": "0",
+          "-J": "100000000041"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Sewing",
+          "-D": "Cot Sheet Creation",
+          "-E": "Sewed Fabric and Elastic to Create Cot Sheets for Classrooms",
+          "-F": "9.81",
+          "-G": "0",
+          "-J": "100000000051"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Volunteer at Center",
+          "-D": "In Classroom-Assist Teacher",
+          "-E": "Assisted the Classroom Teacher - Performed the Duties of an Assistant Teacher",
+          "-F": "9.81",
+          "-G": "0",
+          "-J": "100000000061"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Volunteer at Center",
+          "-D": "In Classroom-Read to Children",
+          "-E": "Read Book(s) to Children Enrolled into the Program",
+          "-F": "9.81",
+          "-G": "0",
+          "-J": "100000000071"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Volunteer at Center",
+          "-D": "In Classroom-Maintenance/Janitorial",
+          "-E": "Assisted with Maintenance and/or Janitorial Services in the Facility",
+          "-G": "0",
+          "-J": "100000000081"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Space",
+          "-C": "Use of Facility",
+          "-D": "Donate Use of Facility for Training",
+          "-E": "Donation of Use of Facility for Training in Lieu of Rental Fees",
+          "-G": "0",
+          "-J": "100000000091"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Space",
+          "-C": "Use of Facility",
+          "-D": "Donate Use of Facility for Head Start Services",
+          "-E": "Donation of Use of Facility for Head Start Vervices in Lieu of Rental Fees",
+          "-G": "0",
+          "-J": "100000000101"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Lending Library",
+          "-D": "Reading Book to Child",
+          "-E": "Reading Book to Enrolled Child from Lending Library",
+          "-G": "0",
+          "-J": "100000000111"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Materials",
+          "-C": "Furniture",
+          "-D": "Donation of Furniture",
+          "-E": "Donated Furniture to the Program for th Provision of Services",
+          "-G": "0",
+          "-J": "100000000121"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Governance",
+          "-D": "Board Member Time (In Hours)",
+          "-E": "Time Volunteering at Board and/or Committee Meeting",
+          "-G": "0",
+          "-J": "100000000131"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Governance",
+          "-D": "Policy Council Member Time (In Hours)",
+          "-E": "Time Volunteering at Policy Council and/or Committee Meeting",
+          "-G": "0",
+          "-J": "100000000141"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Governance",
+          "-D": "Health Service Advisory Committee Member Time (In Hours)",
+          "-E": "Time Volunteering at a Health Service Advisory Committee Meeting",
+          "-G": "0",
+          "-J": "100000000151"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Materials",
+          "-C": "Supplies",
+          "-D": "Health/Dental Supplies",
+          "-E": "Donation of health or dental supplies. (See specification)",
+          "-G": "0",
+          "-J": "100000000161"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Other (Non-HS/EHS)",
+          "-B": "Automobile (Miles)",
+          "-C": "Automobile (Miles)",
+          "-D": "Automobile (Miles)",
+          "-E": "Donated Miles on Personal Vehicle in Lieu of Reimbursement",
+          "-F": "0.5",
+          "-G": "0",
+          "-J": "100000000171"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Early Head Start",
+          "-B": "Automobile (Miles)",
+          "-C": "Automobile (Miles)",
+          "-D": "Automobile (Miles)",
+          "-E": "Donated Miles on Personal Vehicle in Lieu of Reimbursement",
+          "-F": "0.5",
+          "-G": "0",
+          "-J": "100000000181"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Cleaning",
+          "-D": "Washed Cot Sheets",
+          "-E": "Used time, materials, and appliances at home to wash classroom cot sheets",
+          "-F": "9.81",
+          "-G": "0",
+          "-J": "100000000191"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Services",
+          "-D": "Speaker/Presentation at Meeting",
+          "-E": "Presented material at meeting for benefit of families.",
+          "-G": "0",
+          "-J": "100000000201"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Services",
+          "-D": "Speaker/Presentation in Classroom",
+          "-E": "Presented material in classroom for benefit of enrolled children.",
+          "-G": "0",
+          "-J": "100000000211"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Materials",
+          "-C": "Supplies",
+          "-D": "Technology - Software",
+          "-E": "Donated software or software licenses to the program.",
+          "-G": "0",
+          "-J": "100000000221"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Materials",
+          "-C": "Supplies",
+          "-D": "Technology - Hardware",
+          "-E": "Donated hardware to the program.",
+          "-G": "0",
+          "-J": "100000000231"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Intern",
+          "-D": "Nutritional Science Intern",
+          "-E": "Donated time providing nutritional services in an intern capacity.",
+          "-G": "0",
+          "-J": "100000000241"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Time (In Hours)",
+          "-C": "Volunteer at Center",
+          "-D": "Meeting Assistance",
+          "-E": "Donated time assiting with setup, handouts, take down, and clean up at meeting.",
+          "-F": "9.81",
+          "-G": "0",
+          "-J": "100000000251"
+        }
+      },
+      {
+        "Row": {
+          "-A": "Head Start",
+          "-B": "Services",
+          "-C": "IT Services",
+          "-D": "Google AdWords Recruitment",
+          "-E": "Donated Google AdWords services to recruit families for enrollment into the program, staff recruitment, and volunteer recruitment.",
+          "-G": "0",
+          "-J": "100000000261"
+        }
+      }
+    ]
+  }
+}

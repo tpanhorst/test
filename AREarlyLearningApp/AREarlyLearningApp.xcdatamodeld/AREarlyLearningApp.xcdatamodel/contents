@@ -1,4 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14C109" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Categories" syncable="YES">
+        <attribute name="category_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="category_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DonationDetails" syncable="YES"/>
+    <entity name="In_kind_volunteers" representedClassName="In_kind_volunteers" syncable="YES">
+        <attribute name="cellNum" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cntry" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pin" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="street2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userId" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Product_Export_Establishment" representedClassName="Product_Export_Establishment" syncable="YES">
+        <attribute name="barCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productCategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productClass" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="productSubcategory" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sku" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tax" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="SubCategory" syncable="YES">
+        <attribute name="category_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="su_category_image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sub_category_image" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Product_Export_Establishment" positionX="-63" positionY="-18" width="128" height="193"/>
+        <element name="In_kind_volunteers" positionX="-54" positionY="63" width="128" height="193"/>
+        <element name="Categories" positionX="-36" positionY="72" width="128" height="90"/>
+        <element name="SubCategory" positionX="-18" positionY="81" width="128" height="105"/>
+        <element name="DonationDetails" positionX="0" positionY="135" width="128" height="45"/>
+    </elements>
 </model>

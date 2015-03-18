@@ -19,7 +19,10 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
-
-
+-(NSArray*)getDataItemFrom:(NSString*)strItem;
+-(NSArray*)getDataCategory;
+-(NSArray *)getSubCatItem:(NSString *)StrSUbItem;
+-(NSArray *)getProdPirce:(NSString *)StrProdescp;
+-(NSArray *)getDonors;
 @end
 
